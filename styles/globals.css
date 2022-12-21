@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* html, body, heading etc */
+@layer base {
+  body {
+    @apply bg-[#141414] text-white;
+  }
+  header {
+    /* -> header fixed from top position and always from top */
+    @apply fixed top-0 z-50 flex w-full justify-between items-center px-4 py-4 transition-all lg:px-10 lg:py-6;
+  }
+}
+
+/* custom classnames  */
+@layer components {
+  .headerLink {
+    @apply cursor-pointer text-sm font-light text-[#bdb8b8] transition duration-[.4s] hover:text-[#e33535];
+  }
+
+  .bannerButton {
+    @apply flex items-center gap-x-2 rounded px-5 py-1.5 text-sm font-semibold transition hover:opacity-75 md:py-2 md:px-6 md:text-lg;
+  }
+
+  .chevronIcon {
+    @apply absolute top-0 bottom-0 z-40 m-auto cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 h-6 w-6 md:h-8 md:w-8;
+  }
+
+  .inputLabel {
+    @apply text-slate-400 text-base h-12 w-full py-2 px-4 rounded-sm bg-[#403f3f];
+  }
+
+  .modalButton {
+    @apply flex h-11 w-11 items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10;
+  }
+}
